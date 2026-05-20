@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pusdikkp Dashboard</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body{
+      font-family: Arial;
+      background:#f4f6f9;
+      margin:0;
+      padding:20px;
+    }
+
+    h1{
+      color:#0b3d91;
+    }
+
+    .cards{
+      display:flex;
+      gap:20px;
+      margin-bottom:30px;
+    }
+
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+      flex:1;
+    }
+
+    .card h2{
+      margin:0;
+      font-size:32px;
+      color:#0b3d91;
+    }
+
+    .chart-container{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Dashboard Statistik Pusdik KP</h1>
+
+  <div class="cards">
+
+    <div class="card">
+      <p>Total Politeknik</p>
+      <h2>11</h2>
+    </div>
+
+    <div class="card">
+      <p>Total Mahasiswa</p>
+      <h2>5.240</h2>
+    </div>
+
+    <div class="card">
+      <p>Total Magang</p>
+      <h2>812</h2>
+    </div>
+
+    <div class="card">
+      <p>Serapan Anggaran</p>
+      <h2>78%</h2>
+    </div>
+
+  </div>
+
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          'AUP',
+          'Karawang',
+          'Sidoarjo',
+          'Bitung',
+          'Sorong'
+        ],
+        datasets: [{
+          label: 'Jumlah Mahasiswa',
+          data: [1200, 800, 950, 620, 500],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive:true
+      }
+    });
+  </script>
+
+</body>
+</html>
